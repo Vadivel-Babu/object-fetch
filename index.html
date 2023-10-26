@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>country Apis</title>
+</head>
+<body>
+  <h1>countries</h1>
+  <script>
+    let URL = 'https://restcountries.com/v3.1/all';
+    async function getCountries(url){
+      const res = await fetch(url);
+      const data = await res.json();
+      if (data) {
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i].flags);          
+        }
+      }
+    }
+    async function getCountriesName(url){
+      const res = await fetch(url);
+      const data = await res.json();
+      if (data) {
+        for (let i = 0; i < data.length; i++) {
+          console.log(data[i].name, data[i].region,data[i].subregion,data[i].population);          
+        }
+      }
+    }
+    // getCountries(URL);
+    // getCountriesName(URL);
+    let obj1 = {name:'Person1',age:5}
+    let obj2= {age:5,name:'Person1'}
+    let aKey = Object.keys(obj1);
+    console.log(aKey.every((x) => a[x] === b[x]));
+   
+  </script>
+</body>
+</html>
